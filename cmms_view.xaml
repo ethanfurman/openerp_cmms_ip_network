@@ -1,0 +1,18 @@
+!!! xml1.0
+
+-act_window = 'ir.actions.act_window'
+-view = 'ir.ui.view'
+
+~openerp
+    ~data
+
+        // Equipment
+
+        ~record model=view #view_equipment_ip_form
+            @name: cmms.equipment.form
+            @inherit_id ref='cmms.view_equipment_form'
+            @model: cmms.equipment
+            @arch type='xml'
+                ~xpath expr="//page[@string='General Information']/group" position='inside'
+                    ~group
+                        @ip_addr_id
